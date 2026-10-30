@@ -1,0 +1,9 @@
+project: savantenvs/rsyslog
+target: fuzz_imtcp_session
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_imtcp_session/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tools/.libs/fuzz_imtcp_session
+    libfuzzer: true
+    timeout: 10

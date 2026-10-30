@@ -1,0 +1,9 @@
+project: savantenvs/rsyslog
+target: fuzz_rsyslog_message
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rsyslog_message/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tools/fuzz_rsyslog_message
+    libfuzzer: true
+    timeout: 10
